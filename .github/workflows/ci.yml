@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 语法检查
+        run: |
+          python -m py_compile recursive_extract.py recursive_extract_gui.py
+      - name: 运行自测
+        run: python tests/selftest.py

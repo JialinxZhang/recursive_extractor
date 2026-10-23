@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# PyInstaller 构建产物（exe 通过 GitHub Releases 发布，不入库）
+build/
+dist/
+*.spec
+/递归解压工具.exe
+
+# 运行/测试产生的临时文件
+test-*/
+screenshot-demo/
+docs/screenshot-demo/
+*.log
